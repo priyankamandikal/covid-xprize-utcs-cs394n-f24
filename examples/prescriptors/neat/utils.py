@@ -7,7 +7,7 @@ import pandas as pd
 from validation.scenario_generator import generate_scenario
 from validation.scenario_generator import get_raw_data
 
-import ipdb
+# import ipdb
 
 DATA_URL = "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest.csv"
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -149,6 +149,7 @@ def get_predictions(start_date_str, end_date_str, pres_df, countries=None):
     # python examples/predictors/lstm/predict.py --start_date "2020-08-01" --end_date "2020-08-01" --interventions_plan '/Users/ishannigam/Desktop/F22/cs394n/hws/hw2/covid-xprize-utcs-cs394n-f22/examples/prescriptors/neat/tmp_prescription.csv' --output_file "tmp_predictions_for_prescriptions/preds.csv"
 
     # Run script to generate predictions
+
     output_str = subprocess.check_output(
         [
             'python', PREDICT_MODULE,

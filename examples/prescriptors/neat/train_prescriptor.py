@@ -11,7 +11,7 @@ import neat
 import numpy as np
 import pandas as pd
 
-import ipdb
+#import ipdb
 
 from examples.predictors.lstm.xprize_predictor import XPrizePredictor
 

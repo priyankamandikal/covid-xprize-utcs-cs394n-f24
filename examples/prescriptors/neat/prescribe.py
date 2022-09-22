@@ -9,7 +9,7 @@ from copy import deepcopy
 
 import neat
 
-import ipdb
+# import ipdb
 
 from keras.models import load_model
 
