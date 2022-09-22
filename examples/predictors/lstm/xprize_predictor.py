@@ -3,7 +3,7 @@
 import os
 import urllib.request
 
-import ipdb
+# import ipdb
 
 # Suppress noisy Tensorflow debug logging
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
@@ -44,11 +44,11 @@ ADDITIONAL_UK_CONTEXT = os.path.join(DATA_PATH, "uk_populations.csv")
 #               'H2_Testing policy',
 #               'H3_Contact tracing',
 #               'H6_Facial Coverings']
-NPI_COLUMNS = ['C1M_School closing', 
+NPI_COLUMNS = ['C1M_School closing',
            'C2M_Workplace closing',
            'C3M_Cancel public events',
            'C4M_Restrictions on gatherings',
-           'C5M_Close public transport', 
+           'C5M_Close public transport',
            'C6M_Stay at home requirements',
            'C7M_Restrictions on internal movement',
            'C8EV_International travel controls',

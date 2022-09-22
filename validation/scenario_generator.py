@@ -2,7 +2,7 @@
 import os
 import urllib.request
 
-import ipdb
+#import ipdb
 
 import numpy as np
 import pandas as pd
@@ -26,11 +26,11 @@ ID_COLS = ['CountryName',
 #               'H3_Contact tracing',
 #               'H6_Facial Coverings']
 # ishann
-NPI_COLUMNS = ['C1M_School closing', 
+NPI_COLUMNS = ['C1M_School closing',
            'C2M_Workplace closing',
            'C3M_Cancel public events',
            'C4M_Restrictions on gatherings',
-           'C5M_Close public transport', 
+           'C5M_Close public transport',
            'C6M_Stay at home requirements',
            'C7M_Restrictions on internal movement',
            'C8EV_International travel controls',
@@ -66,7 +66,7 @@ def get_raw_data(cache_file, latest=True):
     #ipdb.set_trace()
     if not os.path.exists(cache_file):
         print("\nData file does not exist!!\n")
-        return 
+        return
 
     latest_df = pd.read_csv(cache_file,
                             parse_dates=['Date'],
