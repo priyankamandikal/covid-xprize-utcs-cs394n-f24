@@ -1,0 +1,18 @@
+conda create --name cs394n_hw2 python=3.10.4
+conda activate cs394n_hw2
+
+conda install pip
+# Check that “pip” is pointing to cs394n_hw2’s pip by running “which pip”
+
+# -I ensures existing pre-installed versions of the package are ignored.
+# Optionally, -v provides verbose output to terminal during installation.
+pip install -I pandas==1.4.3
+pip install -I numpy==1.23.2
+pip install -I notebook==6.4.12
+pip install -I scikit-learn==1.1.2
+pip install -I scipy==1.9.1
+pip install -I tensorflow==2.10.0
+pip install -I keras==2.10.0
+pip install -I neat-python==0.92
+pip install -I plotly==5.10.0
+pip install -I matplotlib==3.5.3
