@@ -76,6 +76,13 @@ def prescribe(start_date_str: str,
                          'config-prescriptor')
 
     # Generate prescriptions
+    print("Generating prescriptions...")
+    print("Number of prescriptors:", len(prescriptors))
+    print("Number of geos:", len(df['GeoID'].unique()))
+    print("Start date:", start_date_str)
+    print("End date:", end_date_str)
+    print("Number of IPs:", len(IP_COLS))
+    print()
     prescription_dfs = []
     for prescription_idx, prescriptor in enumerate(prescriptors):
         print("Generating prescription", prescription_idx, "...")
