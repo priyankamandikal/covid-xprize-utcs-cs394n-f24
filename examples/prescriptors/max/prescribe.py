@@ -1,8 +1,8 @@
 # Copyright 2020 (c) Cognizant Digital Business, Evolutionary AI. All rights reserved. Issued under the Apache 2.0 License.
 '''
 Run as:
-    cd examples/prescriptors/zero/
-    python3 prescribe.py --start_date 2020-08-01 --end_date 2020-08-05 -ip none.txt -o test/zero_prescriptions.csv
+    cd examples/prescriptors/max/
+    python3 prescribe.py --start_date 2020-08-01 --end_date 2020-08-05 -ip none.txt -o test/max_prescriptions.csv
 '''
 
 import os
@@ -10,18 +10,18 @@ import argparse
 import pandas as pd
 
 
-NPI_COLS = ['C1M_School closing',
-            'C2M_Workplace closing',
-            'C3M_Cancel public events',
-            'C4M_Restrictions on gatherings',
-            'C5M_Close public transport',
-            'C6M_Stay at home requirements',
-            'C7M_Restrictions on internal movement',
-            'C8EV_International travel controls',
-            'H1_Public information campaigns',
-            'H2_Testing policy',
-            'H3_Contact tracing',
-            'H6M_Facial Coverings']
+IP_MAX_VALUES = {'C1M_School closing': 3,
+                 'C2M_Workplace closing': 3,
+                 'C3M_Cancel public events': 2,
+                 'C4M_Restrictions on gatherings': 4,
+                 'C5M_Close public transport': 2,
+                 'C6M_Stay at home requirements': 3,
+                 'C7M_Restrictions on internal movement': 2,
+                 'C8EV_International travel controls': 4,
+                 'H1_Public information campaigns': 2,
+                 'H2_Testing policy': 3,
+                 'H3_Contact tracing': 2,
+                 'H6M_Facial Coverings': 4}
 
 
 def prescribe(start_date_str: str,
@@ -54,8 +54,8 @@ def prescribe(start_date_str: str,
         'Date': dates})
 
     # Fill df with all zeros
-    for npi_col in NPI_COLS:
-        prescription_df[npi_col] = 0
+    for npi_col, max_value in sorted(IP_MAX_VALUES.items()):
+        prescription_df[npi_col] = max_value
 
     # Add prescription index column.
     prescription_df['PrescriptionIndex'] = 0

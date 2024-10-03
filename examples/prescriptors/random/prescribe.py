@@ -1,4 +1,9 @@
 # Copyright 2020 (c) Cognizant Digital Business, Evolutionary AI. All rights reserved. Issued under the Apache 2.0 License.
+'''
+Run as:
+    cd examples/prescriptors/random/
+    python3 prescribe.py --start_date 2020-08-01 --end_date 2020-08-05 -ip none.txt -o test/random_prescriptions.csv
+'''
 
 import os
 import argparse
@@ -7,20 +12,18 @@ import pandas as pd
 
 NUM_PRESCRIPTIONS = 10
 
-IP_MAX_VALUES = {
-    'C1_School closing': 3,
-    'C2_Workplace closing': 3,
-    'C3_Cancel public events': 2,
-    'C4_Restrictions on gatherings': 4,
-    'C5_Close public transport': 2,
-    'C6_Stay at home requirements': 3,
-    'C7_Restrictions on internal movement': 2,
-    'C8_International travel controls': 4,
-    'H1_Public information campaigns': 2,
-    'H2_Testing policy': 3,
-    'H3_Contact tracing': 2,
-    'H6_Facial Coverings': 4
-}
+IP_MAX_VALUES = {'C1M_School closing': 3,
+                 'C2M_Workplace closing': 3,
+                 'C3M_Cancel public events': 2,
+                 'C4M_Restrictions on gatherings': 4,
+                 'C5M_Close public transport': 2,
+                 'C6M_Stay at home requirements': 3,
+                 'C7M_Restrictions on internal movement': 2,
+                 'C8EV_International travel controls': 4,
+                 'H1_Public information campaigns': 2,
+                 'H2_Testing policy': 3,
+                 'H3_Contact tracing': 2,
+                 'H6M_Facial Coverings': 4}
 
 
 def prescribe(start_date_str: str,
